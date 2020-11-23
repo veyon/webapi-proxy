@@ -1,0 +1,16 @@
+image: docker:latest
+
+stages:
+  - build
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+
+build:
+  stage: build
+  script:
+    - docker build --pull -t $CONTAINER_IMAGE .
+    - docker push $CONTAINER_IMAGE
+
+variables:
+  CONTAINER_IMAGE: $CI_REGISTRY/veyon/webapi-proxy:latest
