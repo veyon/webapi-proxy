@@ -6,7 +6,7 @@ RUN \
 	apt -y --no-install-recommends install software-properties-common && \
 	add-apt-repository ppa:veyon/stable && \
 	apt update && \
-	apt -y --no-install-recommends install veyon=4.5.2-2~focal && \
+	apt -y --no-install-recommends install veyon=4.5.2-3~focal && \
 	apt -y --purge remove software-properties-common && \
 	apt -y --purge autoremove && \
 	apt -y install && \
